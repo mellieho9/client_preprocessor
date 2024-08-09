@@ -24,9 +24,8 @@ function ImageUpload() {
         canvas.height = img.height;
         ctx.drawImage(img, 0, 0);
         grayscale(ctx, img.width, img.height);
-        dilate(ctx, img.width, img.height);
+        smooth(ctx, img.width, img.height);
         divisiveNormalization(ctx, img.width, img.height, 10);
-        erode(ctx, img.width, img.height);
         adjustBrightnessContrast(ctx, img.width, img.height, 10, 50);
 
         setProcessedImage(canvas.toDataURL());
